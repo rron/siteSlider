@@ -15,7 +15,7 @@ var siteSlider = new Class({
     navs: ['ContSlidePrev', 'ContSlideNext'],
     menu: '.link',
     transition: Fx.Transitions.Linear,
-    duration: 300,
+    duration: 700,
     menuNav: false,
     menuNavName: ''
   },
@@ -24,7 +24,7 @@ var siteSlider = new Class({
     this.setOptions(options);
     this.setFrameSize();     
    
-    // tworzy Slider
+    // make up slide
     this.Slider = new Element('div', {
       id: 'Slider',
       styles: {
@@ -34,7 +34,7 @@ var siteSlider = new Class({
       }
     }).inject(document.body);
         
-    // tworzy Kontener dla Slide'ow
+    // make container for frames
     this.FrameContainer = new Element('div', {
       id: 'FrameContainer',
       styles: {
@@ -42,31 +42,29 @@ var siteSlider = new Class({
       }
     }).inject(this.Slider).adopt($$(this.options.frames));
         
-    // tworzy buttony jeśli nie sa zdefiniowane w konstruktorze
+    // make buttons for navigation if not defined
     if (this.options.navs[0] == 'ContSlidePrev') {
-      // wstecz
+      // left/prev
       this.slidePrev = new Element('div', {id: 'ContSlidePrev', styles: {position: 'absolute', top: '0', left: '0', height: '100%', width: '50px', 'background-color': 'lime'}}).inject(document.body);
-      // wprzod
+      // right/next
       this.slideNext = new Element('div', {id: 'ContSlideNext', styles: {position: 'absolute', top: '0', right: '0', height: '100%', width: '50px', 'background-color': 'lime'}}).inject(document.body);  
     } else {
       this.slidePrev = $(this.options.navs[0]);
       this.slideNext = $(this.options.navs[1]);            
     }
     
-    // ustawienie statusu
+    // status
     this.status = 0;
-    
     if (this.options.menuNav)  {
       $(this.options.menuNavName).getElements('li').each(function(e,i)  {
         that = this;
         e.addEvent('click', function()  {
-          //alert(that);
           that.goToFrame(i); 
         }, this);
       }, this);
     }
     
-    // wywolujemy obiekt Tween
+    // Fx.Tween
     this.myFx = new Fx.Tween(this.FrameContainer, {
       property: 'margin-left',
       duration: this.options.duration,
@@ -76,61 +74,65 @@ var siteSlider = new Class({
       onComplete: (function(){this.status=0;}).bind(this)
     });
   
-    // przypisujemy buttonom zdarzenia
+    // assign animation functions to triggers
     this.slidePrev.addEvent('click', this.showPrev.bind(this));
     this.slideNext.addEvent('click', this.showNext.bind(this));
     
+    // add navMenu selected element active class via css
     $$(this.options.menu)[0].addClass('active');
     
-    // wywolujemy funkcje korygujaca rozmiar slidera przy zmianie rozmiaru okna przegladarki
+    // corrects frame sizes after resizing browser window
     window.onresize = this.updateFrameContainer.bind(this); 
   },
   
-  // ustawia rozmiar kazdego slajdu, taki jak rozmiar okna
+  // sets sizes for frames equal to browser window sizes 
   setFrameSize: function() {
     var winSize = window.getSize();
     $$(this.options.frames).each(function(i) {
       this.setOverflow(i);
       i.setStyles({width: winSize.x, height: winSize.y});
     }, this);
-    
     return winSize.x;
   },
   
+  // animation left
   showPrev: function(e) {
     if (Math.abs(this.getCurrPos().toInt()) == 0) {
       this.options.startFrame = 0;
       return;
     } else {
       if (this.status == 0) {
-        this.myFx.start(this.getCurrPos(), (parseInt(this.getCurrPos()) + parseInt(this.setFrameSize())) ); // startujemy efekt przejscia do poprzedniego slajdu
-        this.options.startFrame = this.options.startFrame - 1; // ustawiamy znacznik      
+        this.myFx.start(this.getCurrPos(), (parseInt(this.getCurrPos()) + parseInt(this.setFrameSize())) );
+        this.options.startFrame = this.options.startFrame - 1;       
       } else return;
     }    
   },
   
+  // animation right
   showNext: function(e) {
     if ((this.FrameContainer.getStyle('width').toInt() - this.setFrameSize()) <= Math.abs(this.getCurrPos().toInt())) {
       this.options.startFrame = 4;
       return;
     } else {
       if (this.status == 0) {
-        this.options.startFrame = this.options.startFrame + 1; // ustawiamy znacznik
-        this.myFx.start(this.getCurrPos(), (parseInt(this.getCurrPos()) - parseInt(this.setFrameSize()))); // startujemy efekt przejscia do nastepnego slajdu
+        this.options.startFrame = this.options.startFrame + 1;
+        this.myFx.start(this.getCurrPos(), (parseInt(this.getCurrPos()) - parseInt(this.setFrameSize())));
       } else return;
     }     
   },
   
+  // gets current offset of frameContainer
   getCurrPos: function() {
     return (this.FrameContainer.getStyle('margin-left'));
   },
   
-  // przeskocz do okreslonego frame'a
+  // jumps to chosen frame
   jumpToFrame: function(p) {
    this.setFrameSize();
    this.FrameContainer.setStyle('margin-left', -(p*this.setFrameSize()));
   },
   
+  // goes to specified frame with animation effect
   goToFrame: function(i) {
     if (this.status == 1) {
       return;
@@ -147,12 +149,12 @@ var siteSlider = new Class({
     }
   },
 
-  
+  // checks if needed to set overflow-y: auto for bigger frames
   setOverflow: function(elem) {
     if (window.getSize()['y'] < elem.getSize()['y']) elem.setStyle('overflow-y', 'scroll');    
   },
   
-  // update rozmiarow slidera po zmianie rozmiarow okna przegladarki
+  // function which updates sizes after resizing browser window
   updateFrameContainer: function() {
     this.jumpToFrame(this.options.startFrame);
     $$(this.options.frames).each(function(i) {
