@@ -111,4 +111,6 @@ Options
 * `menuNav` - set to true if we will use menu for navigation between slides
 * `menuNavName` - css selector for navigation menu
 
+
+
   
