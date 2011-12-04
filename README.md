@@ -7,7 +7,7 @@ Using siteSlider create *slides*, which you can scroll to the right or left. Let
 
 ## Main features
 * enable to set unlimited (ofcourse, limited... by sense :)) frames
-* if frame has bigger height of content, than the browser window, it will have 'overflow-y: scroll' added. Donty worry about that.
+* if frame has bigger height of content, than the browser window, it will have `overflow-y: scroll` added. Donty worry about that.
 * navigation provided by two different ways. By left/right buttons, or by menu which directs us to correct frame. You can use it alternately.
 * compatibility with all modern browsers: IE6+, FF 3.6+, Opera9+, Safari and Chrome.
 * it is easy to customize, and easy to use 
@@ -18,7 +18,7 @@ Requirements
 
 Let's start !
 -------------
-At first, we have to set some markup. In general, we need to create elements which will hold some content, with the same class - for example 'frame'.  Then add elements, which should be our triggers for sliding site. The last thing out there, is to put elements (for example list with 'li' nodes), equal in number of 'frame' class holders. 
+At first, we have to set some markup. In general, we need to create elements which will hold some content, with the same class - for example `frame`.  Then add elements, which should be our triggers for sliding site. The last thing out there, is to put elements (for example list with `<li>` nodes), equal in number of `frame` class holders. 
 
     <div id="container">
       <div id="controls">
