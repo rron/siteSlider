@@ -1,8 +1,18 @@
 /*
-  SiteSlide - MooTools plugin for sliding sites left/right !
-  Author: Rafal Ronowicz
-  License: GNU Public License
-  checkout: http://github.com/rron/siteSlider  
+---
+description: siteSlider - MooTools plugin for sliding page
+
+license: MIT-style
+
+authors:
+- Rafał Ronowicz
+
+requires:
+- MooTools 1.3 core
+
+provides: siteSlider
+
+...
 */
 
 var siteSlider = new Class({
