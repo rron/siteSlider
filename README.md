@@ -21,8 +21,7 @@ Let's start !
 -------------
 At first, we have to set some markup. In general, we need to create elements which will hold some content, with the same class - for example 'frame'.  Then add elements, which should be our triggers for sliding site. The last thing out there, is to put elements (for example list with 'li' nodes), equal in number of 'frame' class holders. 
 
-'
-<div id="container">
+'<div id="container">
   <div id="controls">
     <div id="sliderLeft">click to move slider left</div>
     <div id="sliderRight">click to move slider right</div>
@@ -45,13 +44,11 @@ At first, we have to set some markup. In general, we need to create elements whi
   <div class="frame">
       <p>content of frame 4</p>
   </div>      
-</div>
-'
+</div>'
 
 Then, we should add some styling:
 
-'
-body {
+'body {
   overflow:hidden;
 }
 
@@ -88,13 +85,11 @@ body {
 
 .frame {
   float:left; height:100%; width:100%; overflow:hidden;
-}
-'
+}'
 
 Last thing, is to include some js code running our slider !
 
-'
-window.addEvent('domready', function()  {
+'window.addEvent('domready', function()  {
 
   var ss = new siteSlider({
     frames: '.frame',
@@ -105,8 +100,7 @@ window.addEvent('domready', function()  {
     menuNavName: 'selectFrame'
   });    
   
-});
-'
+});'
 
 Options
 -------
