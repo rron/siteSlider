@@ -1,0 +1,24 @@
+body {font-family:Arial, Verdana, sans-serif; font-size:14px; line-height:1.4; overflow:hidden;}
+
+#container {overflow:hidden;}
+
+h1 {position:absolute; top:80px; left:190px; font-family:"Myriad Pro", Arial, Verdana, sans-serif; color:#3e3e3e; font-weight:normal; font-size:30px;}
+h2 {margin-bottom:20px; font-family:"Myriad Pro", Arial, Verdana, sans-serif; color:#3e3e3e; font-weight:normal; font-size:20px;}
+
+#controls {}
+#controls ul {position:absolute; top:150px; left:180px;}
+#controls li {float:left; margin:0 10px;}
+#controls li a {display:block; padding:6px 12px; text-decoration:none; font-weight:bold; text-transform:uppercase; color:#FFF; background:#000; opacity:.8; filter:alpha(opacity=80);}
+#controls li a:hover {opacity:1; filter:alpha(opacity=100);}
+#sliderLeft, #sliderRight {position:absolute; top:50%; width:83px; height:83px; margin-top:-42px; cursor:pointer; opacity:.3; filter:alpha(opacity=30); cursor:pointer;}
+#sliderLeft {left:20px; background:url(../pics/slideleft.png) no-repeat center;}
+#sliderRight {right:20px; background:url(../pics/slideright.png) no-repeat center;}
+#sliderLeft:hover, #sliderRight:hover {opacity:.6; filter: alpha(opacity=60);}
+
+.frame {float:left; height:100%; width:100%; overflow:hidden;}
+.frame1 {background:#fffbb3 url(../pics/frame1-bg.png) repeat-y top left;}
+.frame2 {background:#aefea5 url(../pics/frame2-bg.png) repeat-y top left;}
+.frame3 {background:#a5e2fe url(../pics/frame3-bg.png) repeat-y top left;}
+.frame4 {background:#a5aafe url(../pics/frame4-bg.png) repeat-y top left;}
+
+.frameContent {margin:250px 190px 0; padding:40px; background:url(../pics/frameContent-bg.png); overflow:hidden;}

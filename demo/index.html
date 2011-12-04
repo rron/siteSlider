@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>SiteSlider - MooTools plugin demo</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <script type="text/javascript" src="js/mootools-1.3.js"></script>
+  <script type="text/javascript" src="js/siteSlider.js"></script>
+  <script type="text/javascript">
+    window.addEvent('domready', function()  {
+    
+      var ss = new siteSlider({
+        frames: '.frame',
+        navs: ['sliderLeft', 'sliderRight'],
+        duration: 700,
+        transition: Fx.Transitions.Quad.easeInOut,
+        menuNav: true,
+        menuNavName: 'selectFrame'
+      });    
+      
+    }); 
+  </script>
+   
+ </head>
+ <body>
+ 
+  <div id="container">
+    <div id="controls">
+      <div id="sliderLeft"></div>
+      <div id="sliderRight"></div>
+      <h1>SiteSlider - MooTools plugin for sliding pagesss !</h1>
+      <ul id="selectFrame">
+        <li class="link"><a href="#">frame 1</a></li>
+        <li class="link"><a href="#">frame 2</a></li>
+        <li class="link"><a href="#">frame 3</a></li>
+        <li class="link"><a href="#">frame 4</a></li>
+      </ul>
+    </div>
+    <div class="frame frame1">
+      <div class="frameContent">
+        <h2>First Frame</h2>
+        <p>content of frame 1</p>
+      </div>
+    </div>
+    <div class="frame frame2">
+      <div class="frameContent">
+        <h2>Second Frame</h2>
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lectus arcu, eleifend eget tristique id, consequat eget magna. Proin in ligula sem. Duis et tortor id enim accumsan ultrices sed in justo. Aenean risus velit, luctus et tempus quis, faucibus quis ligula. Praesent gravida leo ac lacus congue volutpat. Donec viverra varius massa nec vulputate. Nam vulputate sollicitudin placerat. Aenean vitae gravida leo. Duis lacus nibh, porta eget condimentum quis, rhoncus vitae enim. 
+         Donec euismod pulvinar porttitor. Nunc sit amet ligula nibh. In hac habitasse platea dictumst. Proin tellus ipsum, pretium et fermentum at, euismod vitae dolor. Mauris commodo luctus lacinia. Nunc aliquet bibendum diam eu porttitor. Aliquam eu varius nisl. Aliquam erat volutpat. Integer euismod purus eget leo fermentum eget tristique felis vestibulum. Fusce fermentum lectus vel est condimentum dapibus. Curabitur pellentesque ligula non purus fringilla tempus mattis ligula porta. Fusce accumsan erat vitae libero elementum rutrum. In ullamcorper volutpat justo, ut congue enim placerat suscipit. Curabitur velit risus, imperdiet in ornare in, commodo sit amet sapien. In hac habitasse platea dictumst. Quisque viverra nisl sit amet nisl vestibulum tempus. 
+         Nam elementum scelerisque adipiscing. Morbi tincidunt sagittis rhoncus. Etiam quis felis dignissim augue molestie laoreet. Cras in metus est. Praesent ullamcorper, mi volutpat aliquet tempus, nibh arcu pulvinar odio, et semper nisi sem eget augue. Etiam cursus mauris in arcu hendrerit sed ultricies dui imperdiet. Proin ullamcorper adipiscing mi et fermentum. Vestibulum quis urna sem, nec interdum mauris. Donec et justo ac purus aliquet varius non sit amet dolor. Vestibulum sollicitudin lacinia leo, at pulvinar justo auctor molestie. Suspendisse suscipit, sapien quis volutpat rutrum, nibh nibh ultrices odio, in rutrum velit libero sit amet lorem. Donec libero lorem, luctus nec rutrum ut, consequat at ante. Donec id neque urna, in ultrices orci. Pellentesque id risus nulla, eget sollicitudin odio. Fusce tortor arcu, dapibus eget euismod blandit, dictum a mi. Nam elementum scelerisque adipiscing. Morbi tincidunt sagittis rhoncus. Etiam quis felis dignissim augue molestie laoreet. Cras in metus est. Praesent ullamcorper, mi volutpat aliquet tempus, nibh arcu pulvinar odio, et semper nisi sem eget augue. Etiam cursus mauris in arcu hendrerit sed ultricies dui imperdiet. Proin ullamcorper adipiscing mi et fermentum. Vestibulum quis urna sem, nec interdum mauris. Donec et justo ac purus aliquet varius non sit amet dolor. Vestibulum sollicitudin lacinia leo, at pulvinar justo auctor molestie. Suspendisse suscipit, sapien quis volutpat rutrum, nibh nibh ultrices odio, in rutrum velit libero sit amet lorem. Donec libero lorem, luctus nec rutrum ut, consequat at ante. Donec id neque urna, in ultrices orci. Pellentesque id risus nulla, eget sollicitudin odio. Fusce tortor arcu, dapibus eget euismod blandit, dictum a mi.        
+        </p>
+      </div>    
+    </div>
+    <div class="frame frame3">
+      <div class="frameContent">
+        <h2>Third Frame</h2>
+        <p>content of frame 3</p>
+      </div>    
+    </div>
+    <div class="frame frame4">
+      <div class="frameContent">
+        <h2>Fourth Frame</h2>
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lectus arcu, eleifend eget tristique id, consequat eget magna. Proin in ligula sem. Duis et tortor id enim accumsan ultrices sed in justo. Aenean risus velit, luctus et tempus quis, faucibus quis ligula. Praesent gravida leo ac lacus congue volutpat. Donec viverra varius massa nec vulputate. Nam vulputate sollicitudin placerat. Aenean vitae gravida leo. Duis lacus nibh, porta eget condimentum quis, rhoncus vitae enim. 
+         Donec euismod pulvinar porttitor. Nunc sit amet ligula nibh. In hac habitasse platea dictumst. Proin tellus ipsum, pretium et fermentum at, euismod vitae dolor. Mauris commodo luctus lacinia. Nunc aliquet bibendum diam eu porttitor. Aliquam eu varius nisl. Aliquam erat volutpat. Integer euismod purus eget leo fermentum eget tristique felis vestibulum. Fusce fermentum lectus vel est condimentum dapibus. Curabitur pellentesque ligula non purus fringilla tempus mattis ligula porta. Fusce accumsan erat vitae libero elementum rutrum. In ullamcorper volutpat justo, ut congue enim placerat suscipit. Curabitur velit risus, imperdiet in ornare in, commodo sit amet sapien. In hac habitasse platea dictumst. Quisque viverra nisl sit amet nisl vestibulum tempus. 
+         Nam elementum scelerisque adipiscing. Morbi tincidunt sagittis rhoncus. Etiam quis felis dignissim augue molestie laoreet. Cras in metus est. Praesent ullamcorper, mi volutpat aliquet tempus, nibh arcu pulvinar odio, et semper nisi sem eget augue. Etiam cursus mauris in arcu hendrerit sed ultricies dui imperdiet. Proin ullamcorper adipiscing mi et fermentum. Vestibulum quis urna sem, nec interdum mauris. Donec et justo ac purus aliquet varius non sit amet dolor. Vestibulum sollicitudin lacinia leo, at pulvinar justo auctor molestie. Suspendisse suscipit, sapien quis volutpat rutrum, nibh nibh ultrices odio, in rutrum velit libero sit amet lorem. Donec libero lorem, luctus nec rutrum ut, consequat at ante. Donec id neque urna, in ultrices orci. Pellentesque id risus nulla, eget sollicitudin odio. Fusce tortor arcu, dapibus eget euismod blandit, dictum a mi. Nam elementum scelerisque adipiscing. Morbi tincidunt sagittis rhoncus. Etiam quis felis dignissim augue molestie laoreet. Cras in metus est. Praesent ullamcorper, mi volutpat aliquet tempus, nibh arcu pulvinar odio, et semper nisi sem eget augue. Etiam cursus mauris in arcu hendrerit sed ultricies dui imperdiet. Proin ullamcorper adipiscing mi et fermentum. Vestibulum quis urna sem, nec interdum mauris. Donec et justo ac purus aliquet varius non sit amet dolor. Vestibulum sollicitudin lacinia leo, at pulvinar justo auctor molestie. Suspendisse suscipit, sapien quis volutpat rutrum, nibh nibh ultrices odio, in rutrum velit libero sit amet lorem. Donec libero lorem, luctus nec rutrum ut, consequat at ante. Donec id neque urna, in ultrices orci. Pellentesque id risus nulla, eget sollicitudin odio. Fusce tortor arcu, dapibus eget euismod blandit, dictum a mi.
+        </p>
+      </div>    
+    </div>    
+  </div>
+       
+ </body>
+</html>
