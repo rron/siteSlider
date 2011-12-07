@@ -2,6 +2,8 @@ siteSlider
 ==========
 Using siteSlider create *slides*, which you can scroll to the right or left. Let's say you have four elements in the code marked by the same class - for example `<div class="frame"></div>` - each with a different content. When the script runs, it assigns to each of these elements the same height and width, as the browser window actually has. Then assigns a previously declared elements of navigation functions, through which the scroll is carried out to further elements to the left - or right.
 
+Demo included, just download.
+
 ## Main features
 * enable to set unlimited (ofcourse, limited... by sense :)) frames
 * if frame has bigger height of content, than the browser window, it will have `overflow-y: scroll` added. Donty worry about that.
