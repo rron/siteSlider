@@ -11,9 +11,19 @@ Demo included, just download.
 * compatibility with all modern browsers: IE6+, FF 3.6+, Opera9+, Safari and Chrome.
 * it is easy to customize, and easy to use 
 
+Modifications from v 0.1
+------------------------
+- Fixed issues with buggy sliding to 'empty' or inaccurate frames while changing triggers from arrows to menu and vice versa
+- added feature which hide all scrollbars from each frame, and show it just when needed - when animation of sliding is ended on current frame
+
+To do (Future plans)
+-------------------
+- Add functions triggered after reaching also first and last frame. In that moment it just stops, but i want to provide some additional function as an option for constructor
+- (ambitious one...) Add posibility to draw frames in 'multiple lines'. Slide from right top frame, to left bottom one for example
+
 Requirements
 ------------
-* MooTools 1.3   
+* MooTools 1.3 or higher (also tested with 1.4.5)   
 
 How to use
 -------------
@@ -84,6 +94,15 @@ Then, we should add some styling:
     .frame {
       float:left; height:100%; width:100%; overflow:hidden;
     }
+
+    
+IMPORTANT thing if We want to use it also in IE7 !
+
+add that line to styles used for IE7 (ie. HTML conditional comments providing IE7 specified stylesheets or hacks, like in this demo ;))
+
+    html {
+      overflow: auto;
+    }    
     
 Last thing, is to include some js code running our slider !
     
