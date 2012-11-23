@@ -20,6 +20,7 @@ To do (Future plans)
 -------------------
 - Add functions triggered after reaching also first and last frame. In that moment it just stops, but i want to provide some additional function as an option for constructor
 - (ambitious one...) Add posibility to draw frames in 'multiple lines'. Slide from right top frame, to left bottom one for example
+- add control by keboard keys
 
 Requirements
 ------------
@@ -108,7 +109,7 @@ Last thing, is to include some js code running our slider !
     
     window.addEvent('domready', function()  {
     
-      var ss = new siteSlider({
+      var ss = new SiteSlider({
         frames: '.frame',
         navs: ['sliderLeft', 'sliderRight'],
         duration: 700,
